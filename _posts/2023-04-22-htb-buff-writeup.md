@@ -13,7 +13,7 @@ As always, the first step is to see what ports are accessible
 
 I used gobuster and dirb to enumerate the site, and while they were running looked at the available pages. After poking around, we find the websites CMS:
 
-![htb_buff_gymhut](https://github.com/guffre.github.io/assets/images/htb_buff_gymhut.png)
+![htb_buff_gymhut](https://guffre.github.io/assets/images/htb_buff_gymhut.png)
 
 A CMS is always worth a check in searchsploit, or a google search for vulnerabilities:
 
@@ -169,7 +169,7 @@ And now, compile/remove source:
 
 We can use msfconsole to setup a listener and catch our reverse shell:
 
-![htb_buff_msfconsole](https://github.com/guffre.github.io/assets/images/htb_buff_msfconsole.png)
+![htb_buff_msfconsole](https://guffre.github.io/assets/images/htb_buff_msfconsole.png)
 
 Now all thats left is to run the vulnerable CloudMe executable:
 
