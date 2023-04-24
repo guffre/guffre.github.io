@@ -1,8 +1,8 @@
-# SSH Logging
-
-The code for this project can be [found here](https://github.com/guffre/ssh_honeypot), and it will log both the username and password of SSH login attempts.
+Let's create a PAM module and an NSS module that complement each other and allow you to log plaintext passwords with any version of OpenSSH.
 
 # Background
+
+The code for this project can be [found here](https://github.com/guffre/ssh_honeypot), and it will log both the username and password of SSH login attempts.
 
 The starting point of this project is "I want to log what passwords my ssh server is receiving". I will breakdown all the steps involved, starting with what components you will need and why.
 
