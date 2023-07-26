@@ -20,7 +20,7 @@ I see SSH and a webserver, not a lot to go on.
 
 ## Website Enumeration
 
-Attempting to view `http://10.10.11.210` in the browser hit a redirect to `only4you.htb`
+Attempting to view `http://10.10.11.210` in the browser hits a redirect to `only4you.htb`
 
 This indicates I should add a `/etc/hosts` entry to point the IP to that hostname:
 
@@ -30,7 +30,7 @@ This indicates I should add a `/etc/hosts` entry to point the IP to that hostnam
 
 After that, I am able to visit the website:
 
-![](C:\Users\Mike\AppData\Roaming\marktext\images\2023-04-27-22-19-22-image.png)
+![htb_onlyforyou_website](https://guffre.github.io/assets/images/htb_onlyforyou_website.png)
 
 I start up a default `dirb` scan and start looking at the website source
 
@@ -54,7 +54,7 @@ I add this new subdomain to my `/etc/hosts` file, and then visit the new page. T
 
 It's a flask app, so lets start looking for interesting things:
 
-![](C:\Users\Mike\AppData\Roaming\marktext\images\2023-04-27-22-24-40-image.png)
+![htb_onlyforyou_flask](https://guffre.github.io/assets/images/htb_onlyforyou_flask.jpg)
 
  This looked the most promising to me:
 
@@ -289,7 +289,7 @@ Visiting port 8001, I found another website. I tried a few guesses, and was able
 
 There, I found a complete form that sends a POST request to the "search" page. There was a lot of guesswork here, but the logic landed on the fact that there was a lot of Neo4j on the server, so lets try some neo4j injects.
 
-![](C:\Users\Mike\AppData\Roaming\marktext\images\2023-04-28-14-55-13-image.png)
+![htb_onlyforyou_internal](https://guffre.github.io/assets/images/htb_onlyforyou_internal.jpg)
 
 ## Neo4j SQL Injection
 
@@ -338,7 +338,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 
 And cracking those with john (after specifying that they were Raw-SHA256 hashes):
 
-![](C:\Users\Mike\AppData\Roaming\marktext\images\2023-04-28-14-43-29-image.png)
+![htb_onlyforyou_hashes](https://guffre.github.io/assets/images/htb_onlyforyou_hashes.jpg)
 
 ## User Access and Root Priv-esc
 
@@ -355,7 +355,7 @@ User john may run the following commands on only4you:
 
 Testing our access against the 127.0.0.1 service, we find that there is a repository with a .tar.gz already inside it!
 
-![](C:\Users\Mike\AppData\Roaming\marktext\images\2023-04-28-14-46-21-image.png)
+![htb_onlyforyou_repo](https://guffre.github.io/assets/images/htb_onlyforyou_repo.png)
 
 Downloading and taking a look at this `x.tar.gz` it is apparent that it is a pip exploit: [GitHub - wunderwuzzi23/this_is_fine_wuzzi: Demo of a malicious python package that will run code upon pip download or install](https://github.com/wunderwuzzi23/this_is_fine_wuzzi)
 
