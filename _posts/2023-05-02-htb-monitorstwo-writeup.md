@@ -24,7 +24,7 @@ Fairly narrow attack service, so lets start exploring the web service.
 
 Checking out port 80 reveals that there is a Cacti installation:
 
-![](C:\Users\Mike\AppData\Roaming\marktext\images\2023-05-02-20-01-26-image.png)
+![htb_monitorstwo_cacti](https://guffre.github.io/assets/images/htb_monitorswo_cacti.jpg)
 
 If you are not familiar with Cacti, here is the "What is Cacti?" blurb from the website:
 
