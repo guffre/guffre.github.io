@@ -132,6 +132,9 @@ author:
 # Site Footer
 footer:
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:mtguffre@protonmail.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url:
